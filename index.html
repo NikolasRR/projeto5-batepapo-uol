@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CSS -->
+    <link href="reset.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <title>Bate-papo Uol</title>
+</head>
+<body>
+    
+    <header>
+        
+        <div>
+            <img src="./img/logo-bate-papo-uol.jpg"/>
+            <ion-icon name="people"></ion-icon>
+        </div>
+
+    </header>
+
+    <main>
+
+        <!-- mensagens ficarão aqui -->
+        <section class="messages">
+
+            
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <input type="text" placeholder="Escreva aqui..."/>
+        <input type="submit" hidden/>
+        <ion-icon name="paper-plane-outline" onclick="sendMessage();"></ion-icon>
+
+    </footer>
+
+    <!-- ION-ICONS -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!-- AXIOS -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- SCRIPT WITH PAGE FUNCTIONALITIES -->
+    <script src="scripts.js"></script>
+
+</body>
+</html>
