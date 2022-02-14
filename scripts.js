@@ -109,7 +109,6 @@ function sendMessageWithEnter (event) {
         let message = document.querySelector("footer input").value;
         const visibilityIsPublic = document.querySelector(".visibilitySelection .selected span").textContent === "Público";
         let visibilityChosen = null;
-        console.log(visibilityIsPublic)
 
         if (visibilityIsPublic) {
             visibilityChosen = "message";
@@ -164,11 +163,11 @@ function loadUsers (serverAnswer) {
 function renderUsers (participant) {
     const onlineUsers = document.querySelector(".receiverSelection");
     if (participant.name === selectedReceiverSaved) {
-        onlineUsers.innerHTML += `<div calss="selected" onclick="selectThisReceiver(this);">
-                                <ion-icon class="ionicon" name="person-circle"></ion-icon>
-                                <span>${participant.name}</span>
-                                <ion-icon class="check hidden" name="checkmark-sharp"></ion-icon>
-                              </div>`;
+        onlineUsers.innerHTML += `<div class="selected" onclick="selectThisReceiver(this);">
+                                    <ion-icon class="ionicon" name="person-circle"></ion-icon>
+                                    <span>${participant.name}</span>
+                                    <ion-icon class="check hidden" name="checkmark-sharp"></ion-icon>
+                                  </div>`;
         return
     }
     onlineUsers.innerHTML += `<div onclick="selectThisReceiver(this);">
