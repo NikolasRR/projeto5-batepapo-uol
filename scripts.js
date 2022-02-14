@@ -163,7 +163,7 @@ function loadUsers (serverAnswer) {
 
 function renderUsers (participant) {
     const onlineUsers = document.querySelector(".receiverSelection");
-    if (participant.name == selectedReceiverSaved) {
+    if (participant.name === selectedReceiverSaved) {
         onlineUsers.innerHTML += `<div calss="selected" onclick="selectThisReceiver(this);">
                                 <ion-icon class="ionicon" name="person-circle"></ion-icon>
                                 <span>${participant.name}</span>
@@ -193,11 +193,9 @@ function selectThisReceiver (newReceiver) {
         previousSelected.classList.remove("selected");
         newReceiver.classList.add("selected");
         selectedReceiverSaved = newReceiver.innerText;
-        console.log(selectedReceiverSaved);
     } else {
         newReceiver.classList.add("selected");
         selectedReceiverSaved = newReceiver.innerText;
-        console.log(selectedReceiverSaved);
     }
 
     const visibility = document.querySelector(".visibilitySelection .selected").innerText.toLowerCase();
