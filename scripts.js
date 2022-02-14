@@ -76,21 +76,21 @@ function messageRenderer (message) {
     const messagesSection = document.querySelector(".messages");
     if (message.type === "status") {
         messagesSection.innerHTML = messagesSection.innerHTML + 
-        `<article class="statusMessage">
+        `<article class="statusMessage" data-identifier="message">
             <span>(${message.time})</span>
             <p><b>${message.from}</b> ${message.text}</p>
          </article>`;
     } 
     else if (message.type === "message") {
         messagesSection.innerHTML = messagesSection.innerHTML + 
-        `<article class="message">
+        `<article class="message" data-identifier="message">
             <span>(${message.time})</span>
             <p><b>${message.from}</b> para <b>${message.to}</b> ${message.text}</p>
          </article>`;
     }
     else if (message.to === userName || message.from === userName) {
         messagesSection.innerHTML = messagesSection.innerHTML + 
-        `<article class="privateMessage">
+        `<article class="privateMessage" data-identifier="message">
             <span>(${message.time})</span>
             <p><b>${message.from}</b> reservadamente para <b>${message.to}</b> ${message.text}</p>
          </article>`;
@@ -192,10 +192,10 @@ function selectThisReceiver (newReceiver) {
     } else if (previousSelected !== null) {
         previousSelected.classList.remove("selected");
         newReceiver.classList.add("selected");
-        selectedReceiverSaved = newReceiver.innerText;
+        selectedReceiverSaved = newReceiver.querySelector("span").innerText;
     } else {
         newReceiver.classList.add("selected");
-        selectedReceiverSaved = newReceiver.innerText;
+        selectedReceiverSaved = newReceiver.querySelector("span").innerText;
     }
 
     const visibility = document.querySelector(".visibilitySelection .selected").innerText.toLowerCase();

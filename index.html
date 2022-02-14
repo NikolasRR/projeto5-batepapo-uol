@@ -21,9 +21,9 @@
     <div class="loginScreen">
 
         <img class="logoImg" src="./img/logo-bate-papo-uol.jpg"/>
-        <input placeholder="Digite seu nome"/ onkeypress="login(event);">
+        <input placeholder="Digite seu nome" data-identifier="enter-name" onkeypress="login(event);"/>
         <span class="hidden" >Nome já em uso, por favor escolha outro</span>
-        <button onclick="login(event);">Entrar</button>
+        <button onclick="login(event);" data-identifier="start">Entrar</button>
         <img class="loadingGif hidden" src="./img/spinning-loading.gif">
         <p class="hidden" >Entrando...</p>
 
@@ -99,7 +99,7 @@
             <input type="text" placeholder="Escreva aqui..." onkeypress="sendMessageWithEnter(event);" />
             <span>Enviando para Todos (público)</span>
         </div>
-        <ion-icon name="paper-plane-outline" onclick="sendMessageWithEnter(event);"></ion-icon>
+        <ion-icon name="paper-plane-outline" onclick="sendMessageWithEnter(event);" data-identifier="send-message"></ion-icon>
 
     </footer>
 
