@@ -12,17 +12,28 @@
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
 
     <title>Bate-papo Uol</title>
 </head>
 <body>
+
+    <div class="loginScreen">
+
+        <img class="logoImg" src="./img/logo-bate-papo-uol.jpg"/>
+        <input placeholder="Digite seu nome"/ onkeypress="login(event);">
+        <span class="hidden" >Nome já em uso, por favor escolha outro</span>
+        <button onclick="login(event);">Entrar</button>
+        <img class="loadingGif hidden" src="./img/spinning-loading.gif">
+        <p class="hidden" >Entrando...</p>
+
+    </div>
     
     <header>
         
         <div>
             <img src="./img/logo-bate-papo-uol.jpg"/>
-            <ion-icon name="people"></ion-icon>
+            <ion-icon onclick="openAndCloseMessageReceiverOptions();" name="people"></ion-icon>
         </div>
 
     </header>
@@ -38,11 +49,57 @@
 
     </main>
 
+    <aside class="hidden" >
+
+        <div class="grayArea" onclick="openAndCloseMessageReceiverOptions();"></div>
+
+        <div class="content" >
+            <section class="users">
+
+                <h3>Escolha um contato para enviar mensagem:</h3>
+
+                <div class="receiverSelection">
+
+                    <div class="selected" onclick="selectThisReceiver(this);">
+                        <ion-icon class="ionicon" name="people"></ion-icon>
+                        <span>Todos</span>
+                        <ion-icon class="check" name="checkmark-sharp"></ion-icon>
+                    </div>
+
+                    <!-- participantes ativos serao adicionados -->
+
+                </div>
+
+            </section>
+
+            <section class="visibilitySelection">
+                
+                <h3>Escolha a visibilidade:</h3>
+
+                <div class="selected public" onclick="selectThisReceiver(this);">
+                    <ion-icon class="ionicon" name="lock-open"></ion-icon>
+                    <span>Público</span>
+                    <ion-icon class="check" name="checkmark-sharp"></ion-icon>
+                </div>
+
+                <div class="private" onclick="selectThisReceiver(this);">
+                    <ion-icon class="ionicon" name="lock-closed"></ion-icon>
+                    <span>Reservadamente</span>
+                    <ion-icon class="check hidden" name="checkmark-sharp"></ion-icon>
+                </div>
+
+            </section>
+        </div>
+
+    </aside>
+
     <footer>
 
-        <input type="text" placeholder="Escreva aqui..."/>
-        <input type="submit" hidden/>
-        <ion-icon name="paper-plane-outline" onclick="sendMessage();"></ion-icon>
+        <div>
+            <input type="text" placeholder="Escreva aqui..." onkeypress="sendMessageWithEnter(event);" />
+            <span>Enviando para Todos (público)</span>
+        </div>
+        <ion-icon name="paper-plane-outline" onclick="sendMessageWithEnter(event);"></ion-icon>
 
     </footer>
 
